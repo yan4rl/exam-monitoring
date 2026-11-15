@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper text-navy font-sans text-sm; }
+  h1 { @apply text-xl font-semibold mb-4; }
+  h2 { @apply text-base font-semibold mb-2; }
+  a { @apply text-peri underline; }
+  label { @apply block text-xs font-medium mb-1; }
+}
+@layer components {
+  .input { @apply w-full border border-lav bg-white rounded px-2 py-1.5 text-navy; }
+  .btn { @apply bg-navy text-paper rounded px-3 py-1.5 font-medium disabled:opacity-50 no-underline inline-block; }
+  .btn-alt { @apply bg-white text-navy border border-lav rounded px-3 py-1.5 font-medium disabled:opacity-50 no-underline inline-block; }
+  .panel { @apply border border-lav bg-white rounded p-4 mb-5; }
+  .th { @apply text-left font-medium border-b border-lav px-2 py-2 whitespace-nowrap; }
+  .td { @apply border-b border-lav/60 px-2 py-2 align-top; }
+  .badge { @apply inline-block border border-peri rounded px-2 py-0.5 text-xs whitespace-nowrap; }
+  .alert { @apply border border-peri bg-white rounded px-3 py-2 mb-4; }
+}
