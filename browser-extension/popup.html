@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exam Behavior Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Exam Behavior Monitor</h1>
+    <p id="who" class="muted"></p>
+  </header>
+
+  <p id="msg" class="msg" hidden></p>
+
+  <section id="view-login" hidden>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username" />
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password" />
+    <button id="btn-login" class="primary">Sign in</button>
+  </section>
+
+  <section id="view-start" hidden>
+    <label for="session">Examination session</label>
+    <select id="session"></select>
+    <label for="code">Session code</label>
+    <input id="code" type="text" maxlength="8" autocomplete="off" />
+    <div class="notice">
+      <p><strong>Monitoring notice</strong></p>
+      <p>While monitoring is active, this extension records the following on the registered Google Forms
+      examination tab, with timestamps: switching tabs or opening new tabs, window focus changes, copy and
+      paste actions, fullscreen exit, extended inactivity, and connection loss.</p>
+      <p>It does not read your questions or answers, keystrokes, clipboard contents, passwords, or any other
+      website. Your instructor can review these records.</p>
+    </div>
+    <label class="check"><input id="consent" type="checkbox" /> I have read and accept this notice.</label>
+    <button id="btn-start" class="primary" disabled>Start monitoring</button>
+    <button id="btn-logout" class="link">Sign out</button>
+  </section>
+
+  <section id="view-active" hidden>
+    <p class="status"><span class="dot"></span> Monitoring active</p>
+    <p id="exam" class="exam"></p>
+    <p class="muted">Pending uploads: <span id="pending">0</span></p>
+    <p class="muted">Recent recorded activity</p>
+    <ul id="recent"></ul>
+    <p class="muted">Submit your Google Form first, then end monitoring.</p>
+    <button id="btn-end" class="primary">End monitoring</button>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
